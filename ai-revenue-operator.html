@@ -33,6 +33,12 @@
           <p class="hero-text">
             Turn business problems into automated workflows that drive revenue, reduce manual work, and improve execution.
           </p>
+          <div class="cred-strip" aria-label="Role fit and proof points">
+            <span>AI workflow design</span>
+            <span>RevOps logic</span>
+            <span>GTM systems</span>
+            <span>Human review built in</span>
+          </div>
           <div class="hero-actions">
             <a class="button primary" href="#builder">Generate Workflow</a>
             <a class="button secondary" href="#proof">View Portfolio Proof</a>
@@ -64,6 +70,10 @@
             <span>Human review</span>
             <span>CRM</span>
             <span>Report</span>
+          </div>
+          <div class="operator-note">
+            <strong>Demo thesis:</strong>
+            <span>AI is useful when it is attached to a business process, measured by a KPI, and reviewed by the right human.</span>
           </div>
         </div>
       </section>
@@ -120,6 +130,15 @@
                 <option>Operations Efficiency System</option>
               </select>
             </label>
+            <label>
+              Target business outcome
+              <select name="businessOutcome">
+                <option>More qualified pipeline</option>
+                <option>Faster campaign execution</option>
+                <option>Lower manual operating load</option>
+                <option>Cleaner reporting for leadership</option>
+              </select>
+            </label>
             <button class="button primary full" type="submit">Generate AI Workflow</button>
           </form>
 
@@ -139,6 +158,13 @@
                 <span class="impact-pill" id="revenueImpactPill">Revenue workflow</span>
               </div>
               <p id="problemSummary"></p>
+              <div class="system-score-grid" id="systemScore"></div>
+            </article>
+
+            <article class="result-card">
+              <p class="eyebrow">System architecture</p>
+              <h3>How the workflow becomes operational</h3>
+              <div class="architecture-strip" id="architectureStrip"></div>
             </article>
 
             <div class="before-after">
@@ -201,6 +227,10 @@
               <h3>Why this matters to the business</h3>
               <div class="kpi-strip" id="kpiImpact"></div>
               <p class="impact-note" id="businessValue"></p>
+              <div class="assumption-box">
+                <h4>Assumptions to validate</h4>
+                <ul id="assumptionsList"></ul>
+              </div>
             </article>
 
             <article class="result-card">
@@ -236,6 +266,24 @@
               AI Solutions Engineer, AI Automation Specialist, Sales Engineer, RevOps, GTM, AI Operator, Product Operations, and AI Workflow Consultant.
             </p>
           </article>
+        </div>
+        <div class="operator-proof-band">
+          <div>
+            <strong>Sony</strong>
+            <span>production systems</span>
+          </div>
+          <div>
+            <strong>Beachbody</strong>
+            <span>P90X / Shakeology launch context</span>
+          </div>
+          <div>
+            <strong>Optum / Rally / Real Appeal</strong>
+            <span>digital health operations</span>
+          </div>
+          <div>
+            <strong>CPG board work</strong>
+            <span>15 states and 1500+ retail accounts</span>
+          </div>
         </div>
       </section>
     </main>

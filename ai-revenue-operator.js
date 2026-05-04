@@ -8,6 +8,7 @@ const revenueExamples = {
     goal:
       "Respond faster, qualify leads, route high-intent prospects to sales, and generate weekly pipeline reporting.",
     currentTools: "Website forms, Gmail, HubSpot, Google Sheets, Slack",
+    businessOutcome: "More qualified pipeline",
   },
   marketing: {
     label: "Content Engine",
@@ -18,6 +19,7 @@ const revenueExamples = {
     goal:
       "Turn one approved product brief into audience-specific content for retail, distributors, investors, and social channels.",
     currentTools: "Google Docs, Canva, Gmail, LinkedIn, Shopify, Notion",
+    businessOutcome: "Faster campaign execution",
   },
   operations: {
     label: "Ops Command Center",
@@ -28,6 +30,7 @@ const revenueExamples = {
     goal:
       "Centralize inputs, summarize status, flag risks, assign owners, and generate weekly operating reports.",
     currentTools: "Email, Slack, Google Sheets, Asana, calendar, shared drive",
+    businessOutcome: "Lower manual operating load",
   },
 };
 
@@ -60,6 +63,7 @@ function setRevenueForm(data) {
   revenueForm.elements.goal.value = data.goal;
   revenueForm.elements.currentTools.value = data.currentTools;
   revenueForm.elements.workflowType.value = data.type;
+  revenueForm.elements.businessOutcome.value = data.businessOutcome;
   workflowBadge.textContent = data.type;
 }
 
@@ -116,6 +120,12 @@ function getWorkflowConfig(type) {
       ],
       outreach:
         "Hi [Name], thanks for reaching out. Based on what you shared, it looks like your main priority is [need]. The fastest next step is a short call to confirm fit, timeline, and scope. Are you open to [two time options] this week?",
+      assumptions: [
+        "Inbound lead volume is high enough to justify automation.",
+        "The CRM has clear ownership rules or can accept new routing fields.",
+        "Sales agrees to a response-time SLA for qualified leads.",
+      ],
+      architecture: ["Lead source", "AI scoring", "CRM routing", "Sales alert", "Follow-up", "KPI report"],
     },
     "Marketing Content Engine": {
       trigger: "New campaign brief, product launch, sales push, investor update, or content request.",
@@ -156,6 +166,12 @@ function getWorkflowConfig(type) {
       ],
       outreach:
         "We built a content engine around your approved product brief. The first draft includes buyer-facing copy, channel-specific posts, and a campaign CTA. Review the claim language first, then we can publish the approved variants.",
+      assumptions: [
+        "The team can provide one approved source brief.",
+        "Brand voice and claim rules are documented enough for review.",
+        "Campaign performance data can be tied back to the asset or channel.",
+      ],
+      architecture: ["Brief", "AI variants", "Human approval", "Content calendar", "Publish", "Performance loop"],
     },
     "Operations Efficiency System": {
       trigger: "Weekly status update, new project intake, missed deadline, support backlog, or manager request.",
@@ -196,6 +212,12 @@ function getWorkflowConfig(type) {
       ],
       outreach:
         "Here is the current operating summary: [status], [blocker], and [next step]. Please confirm owner and timing by end of day so the system can update the weekly report and escalate anything at risk.",
+      assumptions: [
+        "Teams can centralize status inputs into one intake surface.",
+        "Owners and deadlines can be made explicit.",
+        "Leadership agrees on the metrics that define operational health.",
+      ],
+      architecture: ["Input capture", "AI summary", "Risk detection", "Owner review", "Task update", "Leadership report"],
     },
   };
   return configs[type] || configs["Sales Automation"];
@@ -205,10 +227,12 @@ function estimateImpact(data) {
   const type = data.workflowType;
   const base = type === "Sales Automation" ? 28 : type === "Marketing Content Engine" ? 21 : 24;
   const complexity = Math.min(12, Math.ceil((data.businessProblem.length + data.currentTools.length) / 90));
-  const speed = Math.min(74, base + complexity * 4);
+  const outcomeBoost = data.businessOutcome === "More qualified pipeline" ? 5 : data.businessOutcome === "Faster campaign execution" ? 4 : data.businessOutcome === "Lower manual operating load" ? 3 : 2;
+  const speed = Math.min(78, base + complexity * 4 + outcomeBoost);
   const hours = Math.min(32, 10 + complexity * 3);
   const revenue = type === "Sales Automation" ? 28000 + complexity * 4500 : type === "Marketing Content Engine" ? 16000 + complexity * 3000 : 12000 + complexity * 2500;
-  return { speed, hours, revenue };
+  const confidence = Math.min(92, 62 + complexity * 3 + outcomeBoost);
+  return { speed, hours, revenue, confidence };
 }
 
 function generateRevenueWorkflow(data) {
@@ -257,6 +281,31 @@ function renderRevenueWorkflow() {
   renderList("#crmFields", config.crm);
   renderList("#kpiDashboard", config.metrics.split(", "));
   document.querySelector("#sampleOutreach").textContent = config.outreach;
+  renderList("#assumptionsList", config.assumptions);
+
+  document.querySelector("#architectureStrip").innerHTML = config.architecture
+    .map(
+      (item, index) => `
+      <div>
+        <span>${String(index + 1).padStart(2, "0")}</span>
+        <strong>${escapeRevenueHtml(item)}</strong>
+      </div>`,
+    )
+    .join("");
+
+  document.querySelector("#systemScore").innerHTML = [
+    [`${impact.confidence}%`, "workflow confidence"],
+    [data.businessOutcome, "target outcome"],
+    [data.currentTools.split(",").length, "tools connected"],
+  ]
+    .map(
+      ([value, label]) => `
+      <div>
+        <strong>${escapeRevenueHtml(value)}</strong>
+        <span>${escapeRevenueHtml(label)}</span>
+      </div>`,
+    )
+    .join("");
 
   document.querySelector("#workflowSteps").innerHTML = steps
     .map(
@@ -317,6 +366,7 @@ function getRevenuePackText() {
     `Business problem: ${data.businessProblem}`,
     `Goal: ${data.goal}`,
     `Current tools: ${data.currentTools}`,
+    `Target business outcome: ${data.businessOutcome}`,
     "",
     "WORKFLOW MAP",
     steps.map(([label, text]) => `${label}: ${text}`).join("\n"),
@@ -332,6 +382,9 @@ function getRevenuePackText() {
     "",
     "KPI DASHBOARD",
     config.metrics,
+    "",
+    "ASSUMPTIONS TO VALIDATE",
+    config.assumptions.join("\n"),
     "",
     "ESTIMATED IMPACT",
     `${impact.speed}% speed improvement, ${impact.hours} hours saved weekly, $${impact.revenue.toLocaleString()} pipeline or value protected.`,

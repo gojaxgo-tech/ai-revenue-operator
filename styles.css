@@ -167,6 +167,23 @@ h3 {
   margin-top: 30px;
 }
 
+.cred-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 22px;
+}
+
+.cred-strip span {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  color: #343840;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 9px 11px;
+}
+
 .button {
   display: inline-flex;
   min-height: 48px;
@@ -969,6 +986,27 @@ footer {
   text-align: center;
 }
 
+.operator-note {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fffefd;
+  padding: 14px;
+}
+
+.operator-note strong,
+.operator-note span {
+  display: block;
+}
+
+.operator-note strong {
+  margin-bottom: 6px;
+}
+
+.operator-note span {
+  color: var(--muted);
+  line-height: 1.45;
+}
+
 .before-after {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1049,6 +1087,101 @@ footer {
   gap: 16px;
 }
 
+.system-score-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.system-score-grid div,
+.architecture-strip div {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  padding: 13px;
+}
+
+.system-score-grid strong,
+.system-score-grid span,
+.architecture-strip strong,
+.architecture-strip span {
+  display: block;
+}
+
+.system-score-grid strong {
+  font-size: 20px;
+  line-height: 1.15;
+}
+
+.system-score-grid span,
+.architecture-strip span {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.architecture-strip {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.architecture-strip strong {
+  margin-top: 7px;
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.assumption-box {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  margin-top: 16px;
+  padding: 15px;
+}
+
+.assumption-box h4 {
+  margin: 0 0 10px;
+}
+
+.assumption-box ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.operator-proof-band {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.operator-proof-band div {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+
+.operator-proof-band strong,
+.operator-proof-band span {
+  display: block;
+}
+
+.operator-proof-band span {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
 @media (max-width: 1040px) {
   .hero,
   .intro-grid,
@@ -1082,6 +1215,8 @@ footer {
   .workflow-step-grid,
   .operations-grid,
   .proof-layout,
+  .operator-proof-band,
+  .architecture-strip,
   .sprint-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1129,6 +1264,9 @@ footer {
   .workflow-step-grid,
   .operations-grid,
   .proof-layout,
+  .operator-proof-band,
+  .architecture-strip,
+  .system-score-grid,
   .before-after,
   .kpi-strip,
   .revenue-metrics,
