@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Human First Systems | AI Workflow Diagnostic</title>
+    <meta
+      name="description"
+      content="Human First Systems helps small businesses respond faster, follow up better, and stay human with practical AI workflows."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Human First Systems home">
+        <span class="brand-mark">HFS</span>
+        <span>Human First Systems</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#diagnostic">Diagnostic</a>
+        <a href="#offers">Systems</a>
+        <a href="job-hunter.html">Job Hunter</a>
+        <a href="ai-revenue-operator.html">Revenue Operator</a>
+        <a href="real-estate.html">Real Estate</a>
+        <a href="#pilot">Pilot</a>
+      </nav>
+      <a class="nav-cta" href="mailto:hello@humanfirstsystems.co?subject=AI%20workflow%20pilot">Book a Pilot Call</a>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Human-first AI systems for small businesses</p>
+          <h1>Respond faster. Follow up better. Stay human.</h1>
+          <p class="hero-text">
+            We turn scattered manual work into practical AI workflows with clear human review points, so teams move faster without making customers feel automated.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#diagnostic">Build Your Workflow Plan</a>
+            <a class="button secondary" href="#pilot">See Pilot Offer</a>
+          </div>
+        </div>
+
+        <div class="hero-panel" aria-label="System snapshot">
+          <div class="panel-header">
+            <span class="status-dot"></span>
+            <span>AI Lead Concierge</span>
+          </div>
+          <div class="conversation">
+            <div class="message inbound">
+              <span>New inquiry</span>
+              <p>Hi, do you have availability next week and what should I know before booking?</p>
+            </div>
+            <div class="message outbound">
+              <span>Human First System</span>
+              <p>Yes. I can help check fit, answer the common questions, and hand this to the team when you are ready.</p>
+            </div>
+          </div>
+          <div class="metrics">
+            <div>
+              <strong>&lt; 1 min</strong>
+              <span>first response</span>
+            </div>
+            <div>
+              <strong>24/7</strong>
+              <span>lead capture</span>
+            </div>
+            <div>
+              <strong>Human</strong>
+              <span>final approval</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section intro-grid" aria-label="Positioning">
+        <div>
+          <p class="eyebrow">The point</p>
+          <h2>Most businesses do not need AI hype. They need one workflow that works.</h2>
+        </div>
+        <p>
+          Human First Systems starts with the real business process: where leads, follow-ups, decisions, notes, and handoffs slow down. Then we build an AI-assisted operating system around that workflow while keeping humans in control.
+        </p>
+      </section>
+
+      <section class="section" id="offers">
+        <div class="section-heading">
+          <p class="eyebrow">Core systems</p>
+          <h2>Start narrow, then grow from what works.</h2>
+        </div>
+        <div class="system-grid">
+          <article class="system-card">
+            <span class="icon">01</span>
+            <h3>AI Lead Concierge</h3>
+            <p>Responds to new leads, answers common questions, qualifies interest, books or hands off, and keeps follow-up moving.</p>
+          </article>
+          <article class="system-card">
+            <span class="icon">02</span>
+            <h3>AI Sales Follow-Up</h3>
+            <p>Drafts warm, context-aware follow-ups, tracks next steps, and keeps prospects from going cold after first contact.</p>
+          </article>
+          <article class="system-card">
+            <span class="icon">03</span>
+            <h3>AI Knowledge Assistant</h3>
+            <p>Turns company FAQs, docs, products, policies, and SOPs into a reliable assistant for customers or internal teams.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="diagnostic section" id="diagnostic">
+        <div class="section-heading compact">
+          <p class="eyebrow">Interactive diagnostic</p>
+          <h2>Build an AI workflow plan in real time.</h2>
+        </div>
+
+        <div class="example-tabs" id="exampleTabs" aria-label="Example workflows"></div>
+
+        <div class="workspace">
+          <form class="intake-card" id="workflowForm">
+            <div class="card-title-row">
+              <div>
+                <p class="eyebrow">Workflow intake</p>
+                <h3>Business context</h3>
+              </div>
+              <span class="small-badge" id="selectedLabel">AI Lead Concierge</span>
+            </div>
+
+            <label>
+              Business type
+              <textarea name="businessType" rows="1"></textarea>
+            </label>
+            <label>
+              Current workflow
+              <textarea name="workflow" rows="3"></textarea>
+            </label>
+            <label>
+              Biggest pain point
+              <textarea name="painPoint" rows="3"></textarea>
+            </label>
+            <label>
+              Tools currently used
+              <textarea name="tools" rows="2"></textarea>
+            </label>
+            <div class="field-row">
+              <label>
+                Team size
+                <input name="teamSize" type="number" min="1" />
+              </label>
+              <label>
+                Priority
+                <select name="priority"></select>
+              </label>
+            </div>
+            <label>
+              Desired outcome
+              <textarea name="outcome" rows="2"></textarea>
+            </label>
+            <button class="button primary full" type="submit">Generate Workflow Plan</button>
+          </form>
+
+          <section class="plan" aria-live="polite">
+            <article class="result-card diagnosis-card">
+              <div class="card-title-row">
+                <div>
+                  <p class="eyebrow">Diagnosis</p>
+                  <h3>Workflow opportunity</h3>
+                </div>
+                <span class="impact-pill" id="impactPill">34% less manual planning</span>
+              </div>
+              <p id="diagnosis"></p>
+            </article>
+
+            <article class="result-card">
+              <p class="eyebrow">Recommended stack</p>
+              <h3>AI agents with human control</h3>
+              <div class="agent-grid" id="agents"></div>
+            </article>
+
+            <article class="result-card">
+              <p class="eyebrow">Workflow map</p>
+              <h3>From scattered input to approved output</h3>
+              <div class="workflow-map" id="workflowMap"></div>
+            </article>
+
+            <div class="split-results">
+              <article class="result-card">
+                <p class="eyebrow">Deliverables</p>
+                <h3>What the system creates</h3>
+                <ul class="check-list" id="deliverables"></ul>
+              </article>
+              <article class="result-card">
+                <p class="eyebrow">Review points</p>
+                <h3>Where humans stay in charge</h3>
+                <ul class="check-list" id="reviewPoints"></ul>
+              </article>
+            </div>
+
+            <article class="result-card">
+              <p class="eyebrow">30-day rollout</p>
+              <h3>Implementation roadmap</h3>
+              <div class="roadmap" id="roadmap"></div>
+            </article>
+          </section>
+        </div>
+      </section>
+
+      <section class="pilot section" id="pilot">
+        <div>
+          <p class="eyebrow">Pilot offer</p>
+          <h2>Install the first workflow without turning it into a giant project.</h2>
+          <p>
+            The first engagement is intentionally focused: identify the bottleneck, build the AI-assisted workflow, test it with real examples, and launch with human oversight.
+          </p>
+        </div>
+        <div class="pilot-card">
+          <h3>Human First AI Pilot</h3>
+          <ul class="check-list">
+            <li>Workflow audit and intake</li>
+            <li>AI workflow design and prompt system</li>
+            <li>Follow-up, handoff, or output templates</li>
+            <li>Testing with real business scenarios</li>
+            <li>Launch support and first review</li>
+          </ul>
+          <div class="price-row">
+            <span>$750-$1,500 setup</span>
+            <span>$250-$750/mo support</span>
+          </div>
+          <a class="button primary full" href="mailto:hello@humanfirstsystems.co?subject=Human%20First%20AI%20Pilot">Start a Pilot</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Human First Systems</span>
+      <span>Practical AI workflows. Human judgment included.</span>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

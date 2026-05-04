@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Hunter AI Agent Builder | Human First Systems</title>
+    <meta
+      name="description"
+      content="A job search engine and AI agent operator portfolio system for senior AI workflow, automation, product, and growth roles."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Human First Systems home">
+        <span class="brand-mark">HFS</span>
+        <span>Human First Systems</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="index.html">Systems</a>
+        <a href="#builder">Builder</a>
+        <a href="#sprint">Sprint</a>
+        <a href="ai-revenue-operator.html">Revenue Operator</a>
+        <a href="real-estate.html">Real Estate</a>
+        <a href="#workflows">Workflow Proof</a>
+      </nav>
+      <a class="nav-cta" href="#outputs">Generate Assets</a>
+    </header>
+
+    <main id="top">
+      <section class="hero job-hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Job Hunter AI Agent Builder</p>
+          <h1>Turn your operator story into a job search system.</h1>
+          <p class="hero-text">
+            Generate senior-level resume positioning, outreach, cover letters, follow-ups, and a 7-day sprint while demonstrating how you design repeatable AI workflows for real business use cases.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#builder">Build My Search System</a>
+            <a class="button secondary" href="#workflows">Show Workflow Proof</a>
+          </div>
+        </div>
+
+        <div class="hero-panel" aria-label="Agent system snapshot">
+          <div class="panel-header">
+            <span class="status-dot"></span>
+            <span>Career System Agents</span>
+          </div>
+          <div class="agent-stack-preview">
+            <div>
+              <strong>Positioning Agent</strong>
+              <span>Turns career history into a market narrative.</span>
+            </div>
+            <div>
+              <strong>Targeting Agent</strong>
+              <span>Maps roles, companies, recruiters, and warm paths.</span>
+            </div>
+            <div>
+              <strong>Outreach Agent</strong>
+              <span>Creates concise messages with human review built in.</span>
+            </div>
+            <div>
+              <strong>Workflow Proof Agent</strong>
+              <span>Shows business use cases, not just job-search copy.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section intro-grid">
+        <div>
+          <p class="eyebrow">Core positioning</p>
+          <h2>AI Agent Operator. AI Workflow Consultant. Product and Growth Operator.</h2>
+        </div>
+        <p>
+          This system positions you as an operator and builder across media, digital health, and consumer brands: Sony production, Beachbody launches, Optum and Rally Health platforms, Real Appeal systems, CPG board-level scaling, and current AI agent workflow design through Just Be You AI Systems.
+        </p>
+      </section>
+
+      <section class="section" id="builder">
+        <div class="section-heading">
+          <p class="eyebrow">Builder inputs</p>
+          <h2>Choose the opportunity, then generate the assets.</h2>
+        </div>
+
+        <div class="workspace job-workspace">
+          <form class="intake-card" id="jobBuilderForm">
+            <div class="card-title-row">
+              <div>
+                <p class="eyebrow">Opportunity brief</p>
+                <h3>Target details</h3>
+              </div>
+              <span class="small-badge">Senior search</span>
+            </div>
+
+            <label>
+              Target role
+              <input name="targetRole" value="AI Workflow Consultant / GenAI Implementation Lead" />
+            </label>
+            <label>
+              Target company or industry
+              <input name="targetCompany" value="AI-forward growth company, digital health company, CPG brand, or consulting team" />
+            </label>
+            <label>
+              Company challenge
+              <textarea name="companyChallenge" rows="3">The company needs to turn scattered manual work into repeatable AI-assisted workflows that improve speed, consistency, customer experience, and operating leverage.</textarea>
+            </label>
+            <label>
+              Paste job post or opportunity notes
+              <textarea name="jobPost" rows="7" placeholder="Paste the job description, recruiter note, company blurb, or consulting opportunity here. The system will pull out priorities and adapt the outputs."></textarea>
+            </label>
+            <label>
+              Preferred opportunity type
+              <select name="opportunityType">
+                <option>Full-time leadership role</option>
+                <option>Fractional operator role</option>
+                <option>Consulting pilot</option>
+                <option>Advisor or board-level opportunity</option>
+              </select>
+            </label>
+            <label>
+              Strongest proof point to emphasize
+              <select name="proofPoint">
+                <option>Built and helped launch billion-dollar brands</option>
+                <option>Digital health platform and systems experience</option>
+                <option>CPG board-level scaling to 15 states and 1500+ retail accounts</option>
+                <option>AI agent workflow design across CPG, real estate, tourism, and operations</option>
+              </select>
+            </label>
+            <label>
+              Contact type
+              <select name="contactType">
+                <option>Recruiter</option>
+                <option>Founder or CEO</option>
+                <option>Hiring manager</option>
+                <option>Investor or advisor</option>
+              </select>
+            </label>
+            <label>
+              LinkedIn post angle
+              <select name="postAngle">
+                <option>AI workflows need human review points</option>
+                <option>Companies need AI operators, not tool collectors</option>
+                <option>Manual workflows are the real AI opportunity</option>
+                <option>What CPG teams can automate without losing judgment</option>
+              </select>
+            </label>
+            <button class="button primary full" type="submit">Generate Job Hunter System</button>
+          </form>
+
+          <section class="plan output-panel" id="outputs" aria-live="polite">
+            <div class="action-row">
+              <button class="button secondary copy-button" type="button" id="copyAll">Copy Full Pack</button>
+              <button class="button secondary copy-button" type="button" id="printPack">Print / Save PDF</button>
+              <button class="button secondary copy-button" type="button" id="downloadPack">Download Text</button>
+            </div>
+            <div class="module-tabs" id="moduleTabs"></div>
+            <article class="result-card output-card">
+              <div class="card-title-row">
+                <div>
+                  <p class="eyebrow" id="moduleEyebrow">Resume generator</p>
+                  <h3 id="moduleTitle">Senior positioning resume</h3>
+                </div>
+                <button class="button secondary copy-button" type="button" id="copyOutput">Copy Output</button>
+              </div>
+              <div class="output-text" id="moduleOutput"></div>
+            </article>
+            <article class="result-card">
+              <p class="eyebrow">Strategy</p>
+              <h3>Why this works</h3>
+              <p id="moduleStrategy"></p>
+            </article>
+            <article class="result-card">
+              <p class="eyebrow">AI workflow breakdown</p>
+              <h3>How the agent system works</h3>
+              <div class="workflow-breakdown" id="moduleWorkflow"></div>
+            </article>
+          </section>
+        </div>
+      </section>
+
+      <section class="section" id="sprint">
+        <div class="section-heading">
+          <p class="eyebrow">Execution console</p>
+          <h2>Run today's outreach without leaving the system.</h2>
+        </div>
+
+        <div class="sprint-grid">
+          <article class="result-card">
+            <div class="card-title-row">
+              <div>
+                <p class="eyebrow">Target tracker</p>
+                <h3>Daily outreach list</h3>
+              </div>
+              <button class="button secondary copy-button" type="button" id="clearTargets">Clear</button>
+            </div>
+            <form class="target-form" id="targetForm">
+              <input name="targetName" placeholder="Name or company" />
+              <select name="targetType">
+                <option>Recruiter</option>
+                <option>Hiring manager</option>
+                <option>Founder</option>
+                <option>Consulting prospect</option>
+                <option>Warm intro</option>
+              </select>
+              <button class="button primary" type="submit">Add</button>
+            </form>
+            <div class="target-list" id="targetList"></div>
+          </article>
+
+          <article class="result-card">
+            <div class="card-title-row">
+              <div>
+                <p class="eyebrow">LinkedIn post</p>
+                <h3>Daily proof of thinking</h3>
+              </div>
+              <button class="button secondary copy-button" type="button" id="copyPost">Copy Post</button>
+            </div>
+            <div class="output-text social-post" id="linkedinPost"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="workflows">
+        <div class="section-heading">
+          <p class="eyebrow">Portfolio proof</p>
+          <h2>Example workflows this system can demonstrate in interviews.</h2>
+        </div>
+        <div class="proof-grid" id="workflowProof"></div>
+      </section>
+
+      <section class="pilot section">
+        <div>
+          <p class="eyebrow">How to use it</p>
+          <h2>Use the outputs to get meetings. Use the workflows to prove capability.</h2>
+          <p>
+            The content gets you into conversations. The workflow breakdown shows that you are not just using AI tools. You design systems that turn manual work into repeatable business operations.
+          </p>
+        </div>
+        <div class="pilot-card">
+          <h3>Daily operating rhythm</h3>
+          <ul class="check-list">
+            <li>Pick 10 target roles or consulting prospects</li>
+            <li>Tailor the resume narrative to the role category</li>
+            <li>Send 5 recruiter or hiring manager messages</li>
+            <li>Post one workflow insight on LinkedIn</li>
+            <li>Track replies, next steps, and follow-ups</li>
+          </ul>
+          <a class="button primary full" href="#builder">Generate Today's Assets</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Job Hunter AI Agent Builder</span>
+      <span>Search engine plus portfolio proof.</span>
+    </footer>
+
+    <script src="job-hunter.js"></script>
+  </body>
+</html>

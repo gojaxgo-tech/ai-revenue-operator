@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Revenue Operator | Human First Systems</title>
+    <meta
+      name="description"
+      content="A portfolio demo that turns vague business problems into AI-driven sales, marketing, and operations workflows."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Human First Systems home">
+        <span class="brand-mark">HFS</span>
+        <span>Human First Systems</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="index.html">Systems</a>
+        <a href="#builder">Builder</a>
+        <a href="#output">Workflow</a>
+        <a href="#proof">Proof</a>
+      </nav>
+      <a class="nav-cta" href="#builder">Generate Workflow</a>
+    </header>
+
+    <main id="top">
+      <section class="hero revenue-hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Portfolio demo for AI, GTM, RevOps, and operator roles</p>
+          <h1>AI Revenue Operator</h1>
+          <p class="hero-text">
+            Turn business problems into automated workflows that drive revenue, reduce manual work, and improve execution.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#builder">Generate Workflow</a>
+            <a class="button secondary" href="#proof">View Portfolio Proof</a>
+          </div>
+        </div>
+
+        <div class="hero-panel revenue-console" aria-label="Revenue operations dashboard preview">
+          <div class="panel-header">
+            <span class="status-dot"></span>
+            <span>Workflow Impact Preview</span>
+          </div>
+          <div class="revenue-metrics">
+            <div>
+              <strong id="heroSpeed">62%</strong>
+              <span>faster response</span>
+            </div>
+            <div>
+              <strong id="heroHours">18h</strong>
+              <span>weekly time saved</span>
+            </div>
+            <div>
+              <strong id="heroRevenue">$28k</strong>
+              <span>pipeline protected</span>
+            </div>
+          </div>
+          <div class="mini-flow">
+            <span>Trigger</span>
+            <span>AI task</span>
+            <span>Human review</span>
+            <span>CRM</span>
+            <span>Report</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section intro-grid">
+        <div>
+          <p class="eyebrow">What this demo shows</p>
+          <h2>From vague business need to usable AI operating system.</h2>
+        </div>
+        <p>
+          This demo is built for recruiters and hiring managers evaluating AI Solutions Engineer, AI Automation Specialist, Sales Engineer, RevOps, GTM, and AI Operator roles. It shows the ability to diagnose a business problem, structure the workflow, define human review, and map the system to business outcomes.
+        </p>
+      </section>
+
+      <section class="section" id="builder">
+        <div class="section-heading">
+          <p class="eyebrow">Workflow builder</p>
+          <h2>Enter a scenario or load a high-signal example.</h2>
+        </div>
+
+        <div class="example-tabs" id="revenueExamples" aria-label="Scenario examples"></div>
+
+        <div class="workspace revenue-workspace">
+          <form class="intake-card" id="revenueForm">
+            <div class="card-title-row">
+              <div>
+                <p class="eyebrow">Business input</p>
+                <h3>Problem brief</h3>
+              </div>
+              <span class="small-badge" id="workflowBadge">Sales Automation</span>
+            </div>
+
+            <label>
+              Company type
+              <input name="companyType" value="B2B service company" />
+            </label>
+            <label>
+              Business problem
+              <textarea name="businessProblem" rows="5">We receive inbound leads from our website but follow-up is inconsistent. Some leads wait hours or days before sales responds, and the team has no clear scoring or routing process.</textarea>
+            </label>
+            <label>
+              Goal
+              <textarea name="goal" rows="2">Respond faster, qualify leads, route high-intent prospects to sales, and generate weekly pipeline reporting.</textarea>
+            </label>
+            <label>
+              Current tools
+              <input name="currentTools" value="Website forms, Gmail, HubSpot, Google Sheets, Slack" />
+            </label>
+            <label>
+              Workflow type
+              <select name="workflowType">
+                <option>Sales Automation</option>
+                <option>Marketing Content Engine</option>
+                <option>Operations Efficiency System</option>
+              </select>
+            </label>
+            <button class="button primary full" type="submit">Generate AI Workflow</button>
+          </form>
+
+          <section class="plan output-panel" id="output" aria-live="polite">
+            <div class="action-row">
+              <button class="button secondary copy-button" type="button" id="copyRevenuePack">Copy Full Workflow</button>
+              <button class="button secondary copy-button" type="button" id="downloadRevenuePack">Download Text</button>
+              <button class="button secondary copy-button" type="button" id="printRevenuePack">Print / Save PDF</button>
+            </div>
+
+            <article class="result-card">
+              <div class="card-title-row">
+                <div>
+                  <p class="eyebrow">Diagnosis</p>
+                  <h3>Business problem summary</h3>
+                </div>
+                <span class="impact-pill" id="revenueImpactPill">Revenue workflow</span>
+              </div>
+              <p id="problemSummary"></p>
+            </article>
+
+            <div class="before-after">
+              <article class="result-card">
+                <p class="eyebrow">Before</p>
+                <h3>Manual process</h3>
+                <ul class="check-list" id="beforeList"></ul>
+              </article>
+              <article class="result-card after-card">
+                <p class="eyebrow">After</p>
+                <h3>AI-assisted system</h3>
+                <ul class="check-list" id="afterList"></ul>
+              </article>
+            </div>
+
+            <article class="result-card">
+              <p class="eyebrow">Automation map</p>
+              <h3>Step-by-step workflow</h3>
+              <div class="workflow-step-grid" id="workflowSteps"></div>
+            </article>
+
+            <div class="split-results">
+              <article class="result-card">
+                <p class="eyebrow">AI tasks</p>
+                <h3>What AI handles</h3>
+                <ul class="check-list" id="aiTasks"></ul>
+              </article>
+              <article class="result-card">
+                <p class="eyebrow">Human tasks</p>
+                <h3>Where judgment stays human</h3>
+                <ul class="check-list" id="humanTasks"></ul>
+              </article>
+            </div>
+
+            <article class="result-card">
+              <p class="eyebrow">Sample outputs</p>
+              <h3>Sales outreach, tools, CRM fields, and reporting</h3>
+              <div class="operations-grid">
+                <div>
+                  <h4>Suggested tools stack</h4>
+                  <ul id="toolsStack"></ul>
+                </div>
+                <div>
+                  <h4>Sample outreach</h4>
+                  <p id="sampleOutreach"></p>
+                </div>
+                <div>
+                  <h4>CRM fields</h4>
+                  <ul id="crmFields"></ul>
+                </div>
+                <div>
+                  <h4>KPI dashboard</h4>
+                  <ul id="kpiDashboard"></ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="result-card">
+              <p class="eyebrow">Business impact</p>
+              <h3>Why this matters to the business</h3>
+              <div class="kpi-strip" id="kpiImpact"></div>
+              <p class="impact-note" id="businessValue"></p>
+            </article>
+
+            <article class="result-card">
+              <p class="eyebrow">Implementation plan</p>
+              <h3>How to ship this in phases</h3>
+              <div class="roadmap" id="implementationPlan"></div>
+            </article>
+          </section>
+        </div>
+      </section>
+
+      <section class="section" id="proof">
+        <div class="section-heading">
+          <p class="eyebrow">Portfolio proof</p>
+          <h2>Built to show how I translate business needs into practical AI systems.</h2>
+        </div>
+        <div class="proof-layout">
+          <article class="result-card">
+            <h3>What this demonstrates</h3>
+            <p>
+              This demo shows the same operating approach used to take ReelKey from concept to MVP in 2 months: clarify the business problem, define the workflow, map the tools, create usable outputs, and keep the human review points explicit.
+            </p>
+          </article>
+          <article class="result-card">
+            <h3>Primary message</h3>
+            <p>
+              I understand business, sales, operations, and AI workflow design. I can take an idea, structure it into a working system, and make it real fast.
+            </p>
+          </article>
+          <article class="result-card">
+            <h3>Roles this supports</h3>
+            <p>
+              AI Solutions Engineer, AI Automation Specialist, Sales Engineer, RevOps, GTM, AI Operator, Product Operations, and AI Workflow Consultant.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>AI Revenue Operator</span>
+      <span>Business problem to AI workflow in under 2 minutes.</span>
+    </footer>
+
+    <script src="ai-revenue-operator.js"></script>
+  </body>
+</html>

@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real Estate AI Production System | Human First Systems</title>
+    <meta
+      name="description"
+      content="An AI workflow that turns a real estate listing URL into short-form video scripts, social captions, listing copy, and lead capture funnel messaging."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Human First Systems home">
+        <span class="brand-mark">HFS</span>
+        <span>Human First Systems</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="index.html">Systems</a>
+        <a href="job-hunter.html">Job Hunter</a>
+        <a href="#builder">Builder</a>
+        <a href="#pipeline">Pipeline</a>
+      </nav>
+      <a class="nav-cta" href="#outputs">Generate Package</a>
+    </header>
+
+    <main id="top">
+      <section class="hero real-estate-hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Real Estate AI Production System</p>
+          <h1>Turn a listing URL into a production-ready content package.</h1>
+          <p class="hero-text">
+            Build a short-form video script, platform captions, conversion-focused listing description, and lead capture funnel from one listing brief.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#builder">Build Listing Package</a>
+            <a class="button secondary" href="#pipeline">View Production Pipeline</a>
+          </div>
+        </div>
+
+        <div class="hero-panel" aria-label="Listing workflow snapshot">
+          <div class="panel-header">
+            <span class="status-dot"></span>
+            <span>Listing Content Agents</span>
+          </div>
+          <div class="agent-stack-preview">
+            <div>
+              <strong>Listing Intake Agent</strong>
+              <span>Extracts the offer, property details, audience, and proof points.</span>
+            </div>
+            <div>
+              <strong>Video Script Agent</strong>
+              <span>Creates scene structure, shot direction, voiceover, and on-screen text.</span>
+            </div>
+            <div>
+              <strong>Distribution Agent</strong>
+              <span>Adapts captions and CTA messaging by platform.</span>
+            </div>
+            <div>
+              <strong>Lead Funnel Agent</strong>
+              <span>Turns attention into showing requests, guide downloads, and buyer leads.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section intro-grid">
+        <div>
+          <p class="eyebrow">What this proves</p>
+          <h2>A repeatable AI workflow for real production teams.</h2>
+        </div>
+        <p>
+          The system is built for speed: paste a listing URL, add the property notes a producer would actually use, and generate assets that can move straight into scripting, editing, posting, and lead capture.
+        </p>
+      </section>
+
+      <section class="section" id="builder">
+        <div class="section-heading">
+          <p class="eyebrow">Builder inputs</p>
+          <h2>One listing brief becomes the full production package.</h2>
+        </div>
+
+        <div class="workspace real-estate-workspace">
+          <form class="intake-card" id="listingForm">
+            <div class="card-title-row">
+              <div>
+                <p class="eyebrow">Listing intake</p>
+                <h3>Production brief</h3>
+              </div>
+              <span class="small-badge">URL to assets</span>
+            </div>
+
+            <label>
+              Listing URL
+              <input name="listingUrl" value="https://example.com/listing/123-main-st" />
+            </label>
+            <label>
+              Listing or production notes
+              <textarea name="listingNotes" rows="8">Modern 4 bed, 3 bath home in a quiet neighborhood. Open-concept kitchen, large island, natural light, updated primary suite, landscaped backyard, two-car garage, close to schools, parks, restaurants, and commuter routes. Ideal for buyers who want move-in-ready comfort with room to entertain.</textarea>
+            </label>
+            <div class="field-row">
+              <label>
+                Price
+                <input name="price" value="$1,250,000" />
+              </label>
+              <label>
+                Location
+                <input name="location" value="Austin, TX" />
+              </label>
+            </div>
+            <div class="field-row">
+              <label>
+                Agent / brand
+                <input name="agentName" value="The Listing Team" />
+              </label>
+              <label>
+                CTA
+                <select name="cta">
+                  <option>Book a private showing</option>
+                  <option>Request the full listing packet</option>
+                  <option>DM for price and details</option>
+                  <option>Join the open house list</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              Buyer persona
+              <select name="buyerPersona">
+                <option>Move-up family buyer</option>
+                <option>First-time buyer</option>
+                <option>Luxury buyer</option>
+                <option>Investor</option>
+                <option>Relocation buyer</option>
+              </select>
+            </label>
+            <button class="button primary full" type="submit">Generate Listing Content Package</button>
+          </form>
+
+          <section class="plan output-panel" id="outputs" aria-live="polite">
+            <div class="action-row">
+              <button class="button secondary copy-button" type="button" id="copyListingPack">Copy Full Package</button>
+              <button class="button secondary copy-button" type="button" id="downloadListingPack">Download Text</button>
+              <button class="button secondary copy-button" type="button" id="printListingPack">Print / Save PDF</button>
+            </div>
+            <div class="module-tabs" id="listingTabs"></div>
+            <article class="result-card output-card">
+              <div class="card-title-row">
+                <div>
+                  <p class="eyebrow" id="listingEyebrow">Video script</p>
+                  <h3 id="listingTitle">Short-form listing video script</h3>
+                </div>
+                <button class="button secondary copy-button" type="button" id="copyListingOutput">Copy Output</button>
+              </div>
+              <div class="output-text" id="listingOutput"></div>
+            </article>
+            <article class="result-card">
+              <p class="eyebrow">Production workflow</p>
+              <h3>How the system turns listing data into usable assets</h3>
+              <div class="workflow-breakdown" id="listingWorkflow"></div>
+            </article>
+          </section>
+        </div>
+      </section>
+
+      <section class="section" id="pipeline">
+        <div class="section-heading">
+          <p class="eyebrow">Pipeline view</p>
+          <h2>Built for a real content production handoff.</h2>
+        </div>
+        <div class="proof-grid pipeline-grid" id="pipelineCards"></div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Real Estate AI Production System</span>
+      <span>Listing URL to script, captions, copy, and funnel.</span>
+    </footer>
+
+    <script src="real-estate.js"></script>
+  </body>
+</html>
