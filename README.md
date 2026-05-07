@@ -7,6 +7,7 @@ Static portfolio demos for AI workflow, revenue operations, job-search, and prod
 - `ai-revenue-operator.html` - AI Revenue Operator portfolio demo for AI, GTM, RevOps, and operator roles.
 - `job-hunter.html` - Job Hunter AI Agent Builder for tailored job-search assets.
 - `index.html` - Human First Systems workflow diagnostic.
+- `creative-director-portfolio.html` - John Jackson recruiter landing page for Creative Director and healthcare creative leadership roles.
 
 ## Publish
 
